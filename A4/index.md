@@ -1,10 +1,13 @@
 ---
 layout: default
-title: ACD-E25 Portfolio
-nav_order: 1
+title: "A4: Agent-Based Modeling for Surface Panelization"
+nav_order: 4
+has_children: true
+permalink: /A4/
 search_exclude: true
-nav_exclude: true
+nav_exclude: false
 ---
 
-{% capture brief %}{% include_relative README.md %}{% endcapture %}
-{{ brief | markdownify }}
+<meta http-equiv="refresh" content="0; url={{ '/A4/README.html' | relative_url }}">
+
+Redirecting to Project Documentation. If you are not redirected automatically, [click here]({{ '/A4/README.html' | relative_url }}).
