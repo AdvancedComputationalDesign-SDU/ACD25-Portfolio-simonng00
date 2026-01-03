@@ -2,7 +2,7 @@
 layout: default
 title: Old Project Documentation
 parent: "A2: Exploring Fractals through Recursive Geometric Patterns"
-nav_order: 2
+nav_order: 3
 nav_exclude: false
 search_exclude: false
 ---
