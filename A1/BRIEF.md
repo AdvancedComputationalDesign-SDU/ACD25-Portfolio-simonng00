@@ -1,4 +1,17 @@
+---
+layout: default
+title: Assignment Brief
+parent: "A1: NumPy Array Manipulation for 2D Pattern Generation"
+nav_order: 1
+nav_exclude: false
+search_exclude: false
+---
+
 # Assignment 1: NumPy Array Manipulation for 2D Pattern Generation
+
+[View on GitHub]({{ site.github.repository_url }})
+
+![Example Image](images/perlin_moire.png)
 
 ## Objective
 
@@ -66,13 +79,14 @@ pip install numpy matplotlib
 ## Repository Structure
 
 ```
-Assignment1/
-├── README.md
-├── pattern_generator.py
-├── TEMPLATE.md
-├── BRIEF.md
-├── images/
-│   └── (Your generated images go here)
+A1/
+├── index.md                    # Do not edit front matter or content
+├── README.md                   # Project documentation; Keep front matter, replace the rest with your project documentation
+├── BRIEF.md                    # Assignment brief; Do not edit front matter or content
+├── pattern_generator.py        # Your code implementation
+└── images/                     # Add diagram, intermediary, and final images here
+    ├── perlin_moire.png        # Assignment brief image; Do not delete
+    └── ...
 ```
 
 - `README.md`: This file; update this file with your assignment write-up.
