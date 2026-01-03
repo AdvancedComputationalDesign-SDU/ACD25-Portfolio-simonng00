@@ -1,3 +1,12 @@
+---
+layout: default
+title: Old Project Documentation
+parent: "A2: Exploring Fractals through Recursive Geometric Patterns"
+nav_order: 2
+nav_exclude: false
+search_exclude: false
+---
+
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/6QYsis9p)
 # Assignment 2: Exploring Fractals through Recursive Geometric Patterns
 
