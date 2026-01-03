@@ -9,8 +9,6 @@ search_exclude: false
 
 # Documentation for Assignment 1
 
-This is a template for documenting your assignment. Feel free to use the structure below, add/remove section, or re-organize the order to explain your project.
-
 ## Table of Contents
 
 - [Pseudo-Code](#pseudo-code)
