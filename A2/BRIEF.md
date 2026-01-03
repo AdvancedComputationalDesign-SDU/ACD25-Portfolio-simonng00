@@ -1,3 +1,12 @@
+---
+layout: default
+title: Assignment Brief
+parent: "A2: Exploring Fractals through Recursive Geometric Patterns"
+nav_order: 1
+nav_exclude: false
+search_exclude: false
+---
+
 # Assignment 2: Exploring Fractals through Recursive Geometric Patterns
 
 ![Example Fractal](images/example.png)
