@@ -1,3 +1,11 @@
+---
+layout: default
+title: Assignment Brief
+parent: "A3: Parametric Structural Canopy"
+nav_order: 1
+---
+
+
 # Assignment 3: Parametric Structural Canopy
 
 ![Example Canopy](images/canopy.jpg)

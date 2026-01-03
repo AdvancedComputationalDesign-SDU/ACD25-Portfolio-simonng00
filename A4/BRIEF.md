@@ -1,3 +1,10 @@
+---
+layout: default
+title: Assignment Brief
+parent: "A4: Agent-Based Modeling for Surface Panelization"
+nav_order: 1
+---
+
 # Assignment 4: Agent-Based Modeling for Surface Panelization
 
 ![Example Structural Panelization](images/structural_tessellation.jpg)
