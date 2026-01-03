@@ -1,15 +1,4 @@
----
-layout: default
-title: Assignment Brief
-parent: "A3: Parametric Structural Canopy"
-nav_order: 1
-nav_exclude: false
-search_exclude: false
----
-
 # Assignment 3: Parametric Structural Canopy
-
-[View on GitHub]({{ site.github.repository_url }})
 
 ![Example Canopy](images/canopy.jpg)
 
@@ -88,15 +77,14 @@ In this assignment you will design and generate a **parametric structural canopy
 ## Repository Structure
 
 ```
-A3/
-├── index.md                    # Do not edit front matter or content
-├── README.md                   # Project documentation; Keep front matter, replace the rest with your project documentation
-├── BRIEF.md                    # Assignment brief; Do not edit front matter or content
-├── parametric_canopy.py        # Your code implementation
-├── parametric_canopy.gh        # Your grasshopper definition
-└── images/                     # Add diagram, intermediary, and final images here
-    ├── canopy.png              # Assignment brief image; Do not delete
-    └── ...
+Assignment3/
+├── README.md               # Final writeup (your write-up + images)
+├── TEMPLATE.md             # Minimal writeup structure for the report
+├── BRIEF.md                # Assignment handout (this file)
+├── parametric_canopy.py    # GhPython script
+├── parametric_canopy.gh    # Grasshopper definition
+└── images/
+    └── (Output images)
 ```
 
 ---
