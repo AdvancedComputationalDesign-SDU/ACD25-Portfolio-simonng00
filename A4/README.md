@@ -1,3 +1,12 @@
+---
+layout: default
+title: Project Documentation
+parent: "A4: Agent-Based Modeling for Surface Panelization"
+nav_order: 2
+nav_exclude: false
+search_exclude: false
+---
+
 # Assignment 4: Agent-Based Modeling for Surface Panelization
 
 ## Table of Contents

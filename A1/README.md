@@ -1,3 +1,12 @@
+---
+layout: default
+title: Project Documentation
+parent: "A1: NumPy Array Manipulation for 2D Pattern Generation"
+nav_order: 2
+nav_exclude: false
+search_exclude: false
+---
+
 # Documentation for Assignment 1
 
 This is a template for documenting your assignment. Feel free to use the structure below, add/remove section, or re-organize the order to explain your project.
