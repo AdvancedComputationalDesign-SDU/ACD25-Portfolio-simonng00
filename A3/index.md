@@ -5,4 +5,5 @@ nav_order: 3
 has_children: true
 permalink: /A3/
 search_exclude: true
+nav_exclude: true
 ---
