@@ -3,6 +3,8 @@ layout: default
 title: Project Documentation
 parent: "A3: Parametric Structural Canopy"
 nav_order: 2
+nav_exclude: false
+search_exclude: false
 ---
 
 
