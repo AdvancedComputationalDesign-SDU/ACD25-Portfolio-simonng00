@@ -3,6 +3,8 @@ layout: default
 title: Assignment Brief
 parent: "A3: Parametric Structural Canopy"
 nav_order: 1
+nav_exclude: false
+search_exclude: false
 ---
 
 
