@@ -5,9 +5,8 @@ nav_order: 2
 has_children: true
 permalink: /A2/
 search_exclude: true
-nav_exclude: false
 ---
 
-<meta http-equiv="refresh" content="0; url={{ '/A2/README.html' | relative_url }}">
+This assignment investigates **recursive geometric systems** as a method for generating fractal-like patterns. Through iterative rules and self-similar logic, the project explores how simple geometric operations can produce complex spatial structures.
 
-Redirecting to Project Documentation. If you are not redirected automatically, [click here]({{ '/A2/README.html' | relative_url }}).
+Use the sections below to navigate between the **Table of contents**.

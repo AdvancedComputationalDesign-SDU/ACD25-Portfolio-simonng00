@@ -5,9 +5,8 @@ nav_order: 4
 has_children: true
 permalink: /A4/
 search_exclude: true
-nav_exclude: false
 ---
 
-<meta http-equiv="refresh" content="0; url={{ '/A4/README.html' | relative_url }}">
+This assignment investigates **agent-based systems** as a method for surface panelization and spatial organization. By defining local behavioral rules influenced by curvature, slope, and neighborhood signals, the project explores how complex global patterns emerge from simple agent interactions.
 
-Redirecting to Project Documentation. If you are not redirected automatically, [click here]({{ '/A4/README.html' | relative_url }}).
+Use the sections below to navigate between the **Table of contents**.
