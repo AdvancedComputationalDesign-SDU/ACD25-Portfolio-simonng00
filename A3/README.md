@@ -160,7 +160,7 @@ Why:
 a Srf: The generated NURBS heightmap surface
 b Pts: List of all generated 3D grid points
 
-![alt text](image.png)
+![alt text](images/image.png)
 
 ## Pseudo-Code (Tessalation)
 
@@ -296,7 +296,7 @@ d RuledSrfs: lofted wall surfaces
 
 e Extruded: fully extruded 3D solids
 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 ## Pseudo-Code (Column)
 
@@ -404,7 +404,7 @@ b Tips: canopy endpoints tied to the structure.
 
 c Pipes: capped rectangular beam geometry for every branch segment.
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 
 ## Technical Explanation
 The workflow starts by creating a Perlin-noise heightfield inside a closed curve. A UV grid is laid across the area, and each point is checked against the curve so the height smoothly fades toward the boundary. This prevents sharp edges and helps the noise blend naturally. The height values are then used to build a NURBS surface, which becomes the base geometry that the other parts of the project work on.
@@ -421,37 +421,46 @@ Everything is internalized in the grasshopper script, with 3 different canopy se
 ![alt text](images/canopy1_2.jpg)
 ![alt text](images/canopy1_3.jpg)
 
-**Settings:**
-**surface generation**
-| Parameter              | Value |
-| ---------------------- | ----- |
+## Settings
+
+## Surface Generation
+
+| Parameter               | Value |
+|------------------------|-------|
 | Seed                   | 42    |
 | U & V Resolution       | 43    |
 | Amplitude              | -22   |
 | Scale                  | 4     |
-| H (Base Height Offset) | 45    |
+| Base Height Offset (H) | 45    |
 
+---
 
-**Tesselation**
-| Parameter            | Value |
-| -------------------- | ----- |
-| U & V Resolution     | 15    |
-| N (Cell Type)        | 3     |
-| J (Jitter)           | 0.6   |
-| S_min (Scale Min)    | 0.2   |
-| S_max (Scale Max)    | 0.8   |
-| H (Extrusion Height) | 1.5   |
+## Tessellation
 
+| Parameter                  | Value |
+|---------------------------|-------|
+| U & V Resolution          | 15    |
+| Cell Type (N)             | 3     |
+| Jitter (J)                | 0.6   |
+| Scale Min (S<sub>min</sub>) | 0.2 |
+| Scale Max (S<sub>max</sub>) | 0.8 |
+| Extrusion Height (H)      | 1.5   |
 
-**Branching Column**
-| Parameter                | Value |
-| ------------------------ | ----- |
-| R (Canopy Radius)        | 35    |
-| L (Vertical Step Length) | 5     |
-| W (Pipe Width)           | 1     |
-| H (Pipe Height)          | 1     |
+---
 
-Seed is the same for surface generation, tesselation & branchin column
+## Branching Column
+
+| Parameter                 | Value |
+|--------------------------|-------|
+| Canopy Radius (R)        | 35    |
+| Vertical Step Length (L) | 5     |
+| Pipe Width (W)           | 1     |
+| Pipe Height (H)          | 1     |
+
+---
+
+Seed is shared across surface generation, tessellation, and branching column.
+
 
 **Canopy 2**
 Everything is internalized in the grasshopper script, with 3 different canopy settings.
@@ -459,37 +468,46 @@ Everything is internalized in the grasshopper script, with 3 different canopy se
 ![alt text](images/canopy2_2.jpg)
 ![alt text](images/canopy2_3.jpg)
 
-**Settings:**
-**surface generation**
-| Parameter              | Value |
-| ---------------------- | ----- |
+## Settings
+
+## Surface Generation
+
+| Parameter               | Value |
+|------------------------|-------|
 | Seed                   | 45    |
 | U & V Resolution       | 43    |
 | Amplitude              | -68   |
 | Scale                  | 2     |
-| H (Base Height Offset) | 45    |
+| Base Height Offset (H) | 45    |
 
+---
 
-**Tesselation**
-| Parameter            | Value |
-| -------------------- | ----- |
-| U & V Resolution     | 15    |
-| N (Cell Type)        | 4     |
-| J (Jitter)           | 0.6   |
-| S_min (Scale Min)    | 0.2   |
-| S_max (Scale Max)    | 0.8   |
-| H (Extrusion Height) | 1.5   |
+## Tessellation
 
+| Parameter                  | Value |
+|---------------------------|-------|
+| U & V Resolution          | 15    |
+| Cell Type (N)             | 4     |
+| Jitter (J)                | 0.6   |
+| Scale Min (S<sub>min</sub>) | 0.2 |
+| Scale Max (S<sub>max</sub>) | 0.8 |
+| Extrusion Height (H)      | 1.5   |
 
-**Branching Column**
-| Parameter                | Value |
-| ------------------------ | ----- |
-| R (Canopy Radius)        | 30    |
-| L (Vertical Step Length) | 4     |
-| W (Pipe Width)           | 1     |
-| H (Pipe Height)          | 1     |
+---
 
-Seed is the same for surface generation, tesselation & branchin column
+## Branching Column
+
+| Parameter                 | Value |
+|--------------------------|-------|
+| Canopy Radius (R)        | 30    |
+| Vertical Step Length (L) | 4     |
+| Pipe Width (W)           | 1     |
+| Pipe Height (H)          | 1     |
+
+---
+
+Seed is shared across surface generation, tessellation, and branching column.
+
 
 **Canopy 3**
 Everything is internalized in the grasshopper script, with 3 different canopy settings.
@@ -497,37 +515,46 @@ Everything is internalized in the grasshopper script, with 3 different canopy se
 ![alt text](images/canopy3.2.jpg)
 ![alt text](images/canopy3.3.jpg)
 
-**Settings:**
-**surface generation**
-| Parameter              | Value |
-| ---------------------- | ----- |
+## Settings
+
+## Surface Generation
+
+| Parameter               | Value |
+|------------------------|-------|
 | Seed                   | 48    |
 | U & V Resolution       | 43    |
-| Amplitude              | 70   |
+| Amplitude              | 70    |
 | Scale                  | 1     |
-| H (Base Height Offset) | 45    |
+| Base Height Offset (H) | 45    |
 
+---
 
-**Tesselation**
-| Parameter            | Value |
-| -------------------- | ----- |
-| U & V Resolution     | 15    |
-| N (Cell Type)        | 5     |
-| J (Jitter)           | 0.2   |
-| S_min (Scale Min)    | 0.2   |
-| S_max (Scale Max)    | 0.8   |
-| H (Extrusion Height) | 1.5   |
+## Tessellation
 
+| Parameter                  | Value |
+|---------------------------|-------|
+| U & V Resolution          | 15    |
+| Cell Type (N)             | 5     |
+| Jitter (J)                | 0.2   |
+| Scale Min (S<sub>min</sub>) | 0.2 |
+| Scale Max (S<sub>max</sub>) | 0.8 |
+| Extrusion Height (H)      | 1.5   |
 
-**Branching Column**
-| Parameter                | Value |
-| ------------------------ | ----- |
-| R (Canopy Radius)        | 13    |
-| L (Vertical Step Length) | 6     |
-| W (Pipe Width)           | 1     |
-| H (Pipe Height)          | 1     |
+---
 
-Seed is the same for surface generation, tesselation & branchin column
+## Branching Column
+
+| Parameter                 | Value |
+|--------------------------|-------|
+| Canopy Radius (R)        | 13    |
+| Vertical Step Length (L) | 6     |
+| Pipe Width (W)           | 1     |
+| Pipe Height (H)          | 1     |
+
+---
+
+Seed is shared across surface generation, tessellation, and branching column.
+
 
 ## Challenges and Solutions
 One of the first issues I ran into was getting the branching columns to actually reach the canopy at the right points. When I tried building the tree from the ground up, the lines never matched the canopy exactly and the connections looked messy. The solution I found was to reverse the whole process. Instead of growing from the base, I started from the canopy points and merged everything downward. This guaranteed that each branch started exactly where it needed to, and the structure naturally worked its way down to the base.
