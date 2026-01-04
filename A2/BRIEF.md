@@ -7,7 +7,6 @@ nav_order: 1
 
 # Assignment 2: Exploring Fractals through Recursive Geometric Patterns
 
-![Example Fractal](images/example.png)
 
 ## Objective
 
