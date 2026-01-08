@@ -9,7 +9,8 @@ nav_order: 4
 
 - [`surface_generator.py`](surface_generator.py)  
 - [`agent_builder.py`](agent_builder.py)  
-- [`agent_simulator.py`](agent_simulator.py)  
+- [`agent_simulator.py`](agent_simulator.py)
+- [`Tesselation_generator.py`](Tesselation_generator.py)
 
 These scripts define the surface geometry, agent initialization, and agent-based simulation logic.
 

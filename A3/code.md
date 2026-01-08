@@ -10,9 +10,12 @@ nav_order: 4
 - [`1_surface_remapping.py`](1_surface_remapping.py)  
 - [`2_Tessalation_creation_on_surface.py`](2_Tessalation_creation_on_surface.py)  
 - [`3_Branching_columns.py`](3_Branching_columns.py)  
-- [`parametric_canopy.py`](parametric_canopy.py)
 
 These scripts handle surface remapping, tessellation logic, branching column generation, and overall canopy parameter control.
+
+- [`parametric_canopy.py`](parametric_canopy.py)
+
+This is the script of all three of the above combined.
 
 ---
 
