@@ -12,6 +12,9 @@ search_exclude: false
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/Y7v5QwFr)
 # Assignment 3: Parametric Structural Canopy
 
+## Computational Logic Overview
+This project implements three distinct computational paradigms: (1) heightmap-based surface deformation operating in continuous field space, (2) tessellation as a spatial subdivision logic acting on surface topology, and (3) a hierarchical aggregation system for structural supports, where branch form emerges from iterative parent–child reduction rules. While the first two operate primarily through spatial sampling and subdivision, the support system follows a process-driven, hierarchical logic, providing a second computational paradigm beyond tessellation alone.
+
 ## Table of Contents
 
 - [Pseudo-Code (Surface Generation)](#pseudo-code)
@@ -379,9 +382,9 @@ While more than one node remains:
 Why:
 - This creates a tree-like hierarchical skeleton that flows upward, with branching complexity emerging from canopy distribution.
 
-**Note on Non-Recursive Merge Implementation**
+**Note on Hierarchical Aggregation vs. Explicit Recursion**
 
-The merging process is implemented as an iterative while-loop rather than a recursive function. This avoids Python’s recursion-depth limits (important when many canopy nodes exist), and it provides explicit control over special cases such as triple-merges and odd remaining nodes. The iterative approach also allows nodes to be globally sorted each cycle (bottom-up) and makes it easier to record all parent–child relationships used later for branch lines and pipe geometry.
+Although the support system does not use a functionally recursive implementation, it follows a hierarchical reduction model that mirrors recursive tree logic through iterative parent–child merging cycles. This design choice was made to maintain computational stability in GhPython while still preserving structural depth, branching hierarchy, and rule-based growth behavior. In this sense, recursion is expressed procedurally rather than syntactically, prioritizing robustness while maintaining the conceptual model of recursive branching.
 
 6. **Connect the Root to the Base + Final Canopy Links**
 
@@ -557,7 +560,7 @@ Seed is shared across surface generation, tessellation, and branching column.
 
 
 ## Challenges and Solutions
-One of the first issues I ran into was getting the branching columns to actually reach the canopy at the right points. When I tried building the tree from the ground up, the lines never matched the canopy exactly and the connections looked messy. The solution I found was to reverse the whole process. Instead of growing from the base, I started from the canopy points and merged everything downward. This guaranteed that each branch started exactly where it needed to, and the structure naturally worked its way down to the base.
+An important design decision in the branching system was to separate geometric accuracy from growth simulation. Rather than enforcing canopy intersections during each growth step, the algorithm guarantees alignment by anchoring all terminal geometry explicitly back to the canopy points after the structural hierarchy has been formed. This approach ensures precise geometric attachment while allowing the branching logic to remain focused on structural organization rather than collision handling, effectively decoupling constraint enforcement from generative growth.
 
 Another challenge came from generating surface patterns that could switch between triangles, quads, and Voronoi cells while also supporting scaling and extrusion. At first it felt like too many steps were happening at the same time: sampling the surface, building the cells, shrinking them toward their centroids, and turning them into ruled surfaces for the panels. What made it work was sticking to the UV domain of the surface and treating every cell the same way once it was generated. That gave me a consistent workflow no matter which tessellation mode I used.
 
