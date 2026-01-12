@@ -369,7 +369,7 @@ This table summarizes all parameters used in the agent-based model, what they co
     -     - Agents stop behaving like a grid and instead move like particles sliding over the surface. Curvature pulls them along bending directions while slope pushes them uphill, producing directional streaks, dense clusters.
 
 
-### Variation 3: [Name/Description]
+### Variation 3: [Turbulent motion]
 ![alt text](images/image3.png)
 
 - **Signals Used**:
