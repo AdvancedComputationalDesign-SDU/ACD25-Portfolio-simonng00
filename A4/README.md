@@ -314,6 +314,23 @@ This table summarizes all parameters used in the agent-based model, what they co
 - **Parameters Changed**:
 ![alt text](images/var1para.png)
 
+## Parameters as table
+
+| Parameter      | Value |
+|---------------|-------|
+| Steps         | 1.00  |
+| MaxSteps      | 120   |
+| BaseStep      | 1.0   |
+| CurvWeight    | 0.2   |
+| CurvScale     | 0.4   |
+| NeighborRadius| 2.0   |
+| NeighborWeight| 0.1   |
+| SlopeInf      | 0.0   |
+| SlopeMode     | 0     |
+| StillSteps    | 15    |
+| MinSpacing    | 2.0   |
+| HomeWeight    | 0.100 |
+
 - **Description**:
     - In this variation, agents drift gently along the surface’s principal curvature directions. Curvature magnitude slows agents down in highly curved regions, producing tighter density around bumps and relaxed spacing across flatter zones. A light neighborhood repulsion keeps agents from clustering without overpowering the curvature-driven drift.
 
@@ -330,6 +347,24 @@ This table summarizes all parameters used in the agent-based model, what they co
 - **Parameters Changed**:
 ![alt text](images/var2para.png)
 
+## Parameters as table
+
+| Parameter        | Value |
+|------------------|-------|
+| Steps            | 1.00  |
+| MaxSteps         | 180   |
+| BaseStep         | 0.15  |
+| CurvWeight       | 0.6   |
+| CurvScale        | 0.6   |
+| NeighborRadius   | 8.0   |
+| NeighborWeight   | 0.6   |
+| SlopeInf         | 1.0   |
+| SlopeMode        | 1     |
+| StillSteps       | 14    |
+| MinSpacing       | 2.2   |
+| HomeWeight       | 0.050 |
+
+
 - **Description**:
     -     - Agents stop behaving like a grid and instead move like particles sliding over the surface. Curvature pulls them along bending directions while slope pushes them uphill, producing directional streaks, dense clusters.
 
@@ -342,6 +377,23 @@ This table summarizes all parameters used in the agent-based model, what they co
 
 - **Parameters Changed**:
 ![alt text](images/var3para.png)
+
+## Parameters as table
+
+| Parameter        | Value |
+|------------------|-------|
+| Steps            | 1.00  |
+| MaxSteps         | 75    |
+| BaseStep         | 0.30  |
+| CurvWeight       | 0.5   |
+| CurvScale        | 0.3   |
+| NeighborRadius   | 1.0   |
+| NeighborWeight   | 0.6   |
+| SlopeInf         | 0.2   |
+| SlopeMode        | -1    |
+| StillSteps       | 15    |
+| MinSpacing       | 3.5   |
+| HomeWeight       | 0.050 |
 
 - **Description**:
     - This variation emphasizes unpredictable, turbulent motion by combining strong curvature following with a reverse-slope attractor. Agents accelerate across the surface with minimal stabilization, creating dense pockets, stretched voids, and rapidly shifting local neighborhoods.
