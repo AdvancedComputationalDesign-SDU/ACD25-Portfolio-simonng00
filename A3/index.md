@@ -5,9 +5,8 @@ nav_order: 3
 has_children: true
 permalink: /A3/
 search_exclude: true
-nav_exclude: false
 ---
 
-<meta http-equiv="refresh" content="0; url={{ '/A3/README.html' | relative_url }}">
+This assignment explores a **parametric structural canopy system** driven by surface fields and geometric rules. Through the integration of Grasshopper and Python scripts, the project investigates how surface remapping, tessellation, and branching logic can generate structurally expressive canopy configurations.
 
-Redirecting to Project Documentation. If you are not redirected automatically, [click here]({{ '/A3/README.html' | relative_url }}).
+Use the sections below to navigate between the **Table of contents**.

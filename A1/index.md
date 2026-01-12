@@ -5,9 +5,9 @@ nav_order: 1
 has_children: true
 permalink: /A1/
 search_exclude: true
-nav_exclude: false
 ---
 
-<meta http-equiv="refresh" content="0; url={{ '/A1/README.html' | relative_url }}">
+This assignment explores **2D pattern generation using NumPy array manipulation**.  
+Through rule-based operations and controlled randomness, a series of pixel-based patterns are generated and evaluated.
 
-Redirecting to Project Documentation. If you are not redirected automatically, [click here]({{ '/A1/README.html' | relative_url }}).
+Use the sections below to navigate between the **table of contents**.

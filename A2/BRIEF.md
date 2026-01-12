@@ -3,15 +3,10 @@ layout: default
 title: Assignment Brief
 parent: "A2: Exploring Fractals through Recursive Geometric Patterns"
 nav_order: 1
-nav_exclude: false
-search_exclude: false
 ---
 
 # Assignment 2: Exploring Fractals through Recursive Geometric Patterns
 
-[View on GitHub]({{ site.github.repository_url }})
-
-![Example Fractal](images/branching.png)
 
 ## Objective
 
@@ -141,14 +136,17 @@ For 3D visualization or advanced features, you may also need:
 ## Repository Structure
 
 ```
-A2/
-├── index.md                    # Do not edit front matter or content
-├── README.md                   # Project documentation; Keep front matter, replace the rest with your project documentation
-├── BRIEF.md                    # Assignment brief; Do not edit front matter or content
-├── fractal_generator.py        # Your code implementation
-└── images/                     # Add diagram, intermediary, and final images here
-    ├── branching.png           # Assignment brief image; Do not delete
-    └── ...
+Assignment2/
+├── README.md
+├── BRIEF.md
+├── TEMPLATE.md
+├── fractal_generator.py
+├── images/
+│   ├── fractal1.png
+│   ├── fractal2.png
+│   ├── fractal3.png
+│   ├── fractal4.png
+│   └── (Additional images)
 ```
 
 Requirements highlight: generate **four** distinct outputs, use randomness with a fixed seed recorded for reproducibility, and save only the generated image (tight layout, axes off).

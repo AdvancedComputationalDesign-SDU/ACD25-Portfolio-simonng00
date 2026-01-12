@@ -1,106 +1,89 @@
-"""
-Assignment 4: Agent-Based Model for Surface Panelization
+import Rhino.Geometry as rg
 
-Author: Your Name
+# ------------------------------------------------------------
+# Agent class
+# ------------------------------------------------------------
 
-Agent Builder Template
+class Agent(object):
+    def __init__(self, u, v, surface, i, j, idx):
+        # param space
+        self.u = u
+        self.v = v
+        self.u0 = u  # home UV
+        self.v0 = v
 
-Description:
-Defines the core Agent class and factory methods for constructing an
-agent-based system. Provides a high-level OOP structure for sensing,
-decision-making, and movement, along with a stateful Grasshopper
-GH_ScriptInstance example.
+        # grid indices
+        self.i = i   # col index
+        self.j = j   # row index
 
-Note: This script is intended to be used within Grasshopper's Python
-scripting component.
-"""
+        # bookkeeping
+        self.idx = idx
+        self.is_active = True
+        self.still_steps = 0
 
+        # 3D position
+        self.pos = surface.PointAt(u, v)
 
-# -----------------------------------------------------------------------------
-# Imports (extend as needed)
-# -----------------------------------------------------------------------------
-import rhinoscriptsyntax as rs
-import random
-import numpy as np
+    def update_position(self, surface):
+        self.pos = surface.PointAt(self.u, self.v)
 
 
-# -----------------------------------------------------------------------------
-# Utility functions (optional)
-# -----------------------------------------------------------------------------
-def seed_everything(seed):
-    """Set random seeds for reproducibility."""
-    if seed is not None:
-        random.seed(seed)
-        np.random.seed(seed)
+# ------------------------------------------------------------
+# Build agents from input points + grid size
+# ------------------------------------------------------------
 
-seed_everything(42)
+def init_agents(surface, pts, u_count, v_count):
+    agents = []
+    agent_pts = []
 
-# -----------------------------------------------------------------------------
-# Core agent class
-# -----------------------------------------------------------------------------
-class Agent:
-    """Represents a single agent with position, velocity, and state."""
+    if surface is None or pts is None:
+        return [], []
 
-    def __init__(self, position, velocity):
-        """
-        Initialize the agent with position and velocity.
-        """
-        self.position = position
-        self.velocity = velocity
-        # TODO: Add any other attributes you need (e.g., id, age, type, etc.).
+    # make sure we work with a Surface
+    if hasattr(surface, "ToNurbsSurface"):
+        surface = surface.ToNurbsSurface()
 
-    def sense(self, signals):
-        """Read environmental signals relevant to the agent."""
-        # TODO: Implement sensing logic based on your chosen signals.
+    total = len(pts)
+    expected = u_count * v_count
+
+    if total != expected:
+        # you can print a warning if you want:
+        # print("Warning: len(Pts) != Ucnt*Vcnt ({} vs {})".format(total, expected))
         pass
 
-    def decide(self):
-        """Decide on actions based on sensed information."""
-        # TODO: Implement decision rules.
-        pass
+    for idx, p in enumerate(pts):
+        # robust Point3d conversion
+        if isinstance(p, rg.Point3d):
+            pt = p
+        else:
+            pt = rg.Point3d(p[0], p[1], p[2])
 
-    def move(self):
-        """Update position according to velocity and rules."""
-        # TODO: Implement movement logic.
-        pass
+        # find UV on surface
+        res = surface.ClosestPoint(pt)
+        if res is None:
+            continue
 
-    def update(self, agents):
-        """Perform one update cycle: sense, decide, and move."""
-        # TODO: Call sense / decide / move here, or structure as you prefer.
-        pass
+        success, u, v = res
+        if not success:
+            continue
+
+        # compute grid indices from idx
+        i = idx % u_count   # column
+        j = idx // u_count  # row
+
+        ag = Agent(u, v, surface, i, j, idx)
+        agents.append(ag)
+        agent_pts.append(ag.pos)
+
+    return agents, agent_pts
 
 
-# -----------------------------------------------------------------------------
-# Factory for creating agents
-# -----------------------------------------------------------------------------
-def build_agents(num_agents, initial_data=None):
-    """Create and initialize a list of Agent instances."""
-    # TODO: Implement build_agents(...) based on your design.
-    raise NotImplementedError("Implement build_agents(...) based on your design.")
+# ------------------------------------------------------------
+# Grasshopper execution
+# ------------------------------------------------------------
 
-
-# -----------------------------------------------------------------------------
-# Grasshopper script instance (structural placeholder)
-# -----------------------------------------------------------------------------
-"""Example container for managing agent state in Grasshopper.
-
-Use this class to maintain and update agents between recomputations.
-"""
-
-class MyComponent(Grasshopper.Kernel.GH_ScriptInstance):
-    """Manages persistent agent list across Grasshopper runs."""
-
-    def RunScript(self, N:int, reset:bool):
-        """
-        Main entry point called by Grasshopper.
-
-        Parameters
-        ----------
-        N : int
-            Number of agents.
-        reset : bool
-            When True, reinitialize agents.
-        """
-        if reset or not hasattr(self, "agents"):
-            self.agents = build_agents(N)
-        return self
+if Srf is None or Pts is None or Ucnt is None or Vcnt is None:
+    Agents = []
+    AgentPts = []
+else:
+    Agents, AgentPts = init_agents(Srf, Pts, Ucnt, Vcnt)
